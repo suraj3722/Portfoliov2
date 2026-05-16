@@ -1,0 +1,258 @@
+export const personalInfo = {
+  name: "Suraj Kumar Gupta",
+  title: "Software Engineer & Problem Solver",
+  taglines: [
+    "Full Stack Developer",
+    "AI Enthusiast",
+    "Competitive Programmer",
+    "Open Source Contributor",
+  ],
+  email: "surajgupta3722@gmail.com",
+  phone: "+91-9616170551",
+  photo: "/suraj.jpeg",
+  resume: "/resume.pdf",
+  bio: `I'm a passionate software engineer pursuing my MCA at MNNIT Allahabad, one of India's premier NIT institutions. With a strong foundation in Data Structures & Algorithms, Full Stack Development, and AI integration, I build solutions that are both technically robust and elegantly designed.
+
+I thrive at the intersection of performance and creativity — whether it's architecting real-time collaborative platforms, building AI-powered tools, or cracking competitive programming problems. My journey is driven by curiosity, discipline, and a relentless pursuit of excellence.`,
+  location: "Allahabad, India",
+  links: {
+    github: "https://github.com/suraj3722",
+    linkedin: "https://linkedin.com/in/suraj3722",
+    leetcode: "https://leetcode.com/Jarvis012",
+    codeforces: "https://codeforces.com/profile/Jarvis012",
+  },
+};
+
+export const education = [
+  {
+    degree: "Master of Computer Applications (MCA)",
+    institution: "Motilal Nehru National Institute of Technology Allahabad",
+    shortName: "MNNIT Allahabad",
+    period: "2025 – 2028",
+    score: "CPI: 7.8 (up to 1st Semester)",
+    type: "Post Graduate",
+    logo: "🏛️",
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "Chandigarh University",
+    shortName: "Chandigarh University",
+    period: "2021 – 2024",
+    score: "CGPA: 8.37",
+    type: "Under Graduate",
+    logo: "🎓",
+  },
+  {
+    degree: "Senior Secondary Education",
+    institution: "Maharshi Valmiki Vidya Mandir Ballia",
+    shortName: "UP Board",
+    period: "2019",
+    score: "12th: 75.4% | 10th: 78.66%",
+    type: "Secondary",
+    logo: "🏫",
+  },
+];
+
+export const skills = {
+  Languages: [
+    { name: "C", icon: "⚡", level: 85 },
+    { name: "C++", icon: "🔷", level: 80 },
+    { name: "JavaScript", icon: "🟨", level: 90 },
+  ],
+  Frontend: [
+    { name: "React.js", icon: "⚛️", level: 88 },
+    { name: "HTML5", icon: "🌐", level: 92 },
+    { name: "CSS3", icon: "🎨", level: 88 },
+    { name: "Fabric.js", icon: "🖼️", level: 75 },
+    { name: "EJS", icon: "📄", level: 70 },
+  ],
+  Backend: [
+    { name: "Node.js", icon: "🟩", level: 85 },
+    { name: "Express.js", icon: "🚂", level: 83 },
+  ],
+  Database: [{ name: "MongoDB", icon: "🍃", level: 80 }],
+  Tools: [
+    { name: "Git", icon: "🔀", level: 85 },
+    { name: "GitHub", icon: "🐙", level: 88 },
+    { name: "VS Code", icon: "💙", level: 92 },
+  ],
+  Concepts: [
+    { name: "Data Structures & Algorithms", icon: "🧮", level: 82 },
+    { name: "OOP", icon: "📦", level: 85 },
+    { name: "WebSockets", icon: "🔌", level: 78 },
+    { name: "REST APIs", icon: "🔗", level: 86 },
+  ],
+};
+
+export const projects = [
+  {
+    id: 1,
+    title: "ScribDrib",
+    subtitle: "Real-time Collaborative Whiteboard",
+    description:
+      "A multi-user live drawing and collaboration platform built for teams. Features real-time canvas sync across all participants, AI-powered session summaries, and JWT-secured WebSocket authentication. Built as a team of 3 — contributed to frontend architecture and AI integration.",
+    longDescription:
+      "ScribDrib revolutionizes remote collaboration by combining a real-time canvas with AI intelligence. Teams can draw, annotate, and brainstorm simultaneously — and when the session ends, Google GenAI generates a comprehensive summary of the whiteboard content.",
+    tech: ["React", "Socket.IO", "Node.js", "MongoDB", "Google GenAI", "JWT", "Fabric.js"],
+    github: "https://github.com/suraj3722",
+    demo: null,
+    gradient: "from-violet-600 to-cyan-500",
+    glowColor: "shadow-violet-500/20",
+    tag: "Hackathon Winner",
+    tagColor: "bg-violet-500/20 text-violet-300",
+    highlights: [
+      "Real-time multi-user canvas sync via Socket.IO",
+      "AI-powered whiteboard summarization with Google GenAI",
+      "JWT-secured WebSocket authentication",
+      "Won DevJam 2026 — Rank 2",
+    ],
+    year: "2025",
+  },
+  {
+    id: 2,
+    title: "Beat the Buzzer",
+    subtitle: "Cross-platform Desktop Countdown Timer",
+    description:
+      "A polished desktop countdown timer built with Electron.js, featuring a stunning animated glowing ring UI, fullscreen mode, always-on-top toggling, and keyboard shortcuts. Integrates Canvas Confetti and HTML5 Notification API for an immersive buzzer experience.",
+    longDescription:
+      "Beat the Buzzer transforms a simple countdown timer into a premium desktop experience. The animated ring responds to timer states, keyboard shortcuts (Space, R) provide full control, and the confetti explosion at buzzer time creates a memorable moment.",
+    tech: ["Electron.js", "JavaScript", "HTML5", "CSS3", "Canvas API", "Notification API"],
+    github: "https://github.com/suraj3722",
+    demo: null,
+    gradient: "from-cyan-500 to-blue-600",
+    glowColor: "shadow-cyan-500/20",
+    tag: "Desktop App",
+    tagColor: "bg-cyan-500/20 text-cyan-300",
+    highlights: [
+      "Animated CSS transition-based glowing ring UI",
+      "Fullscreen, always-on-top, keyboard shortcuts",
+      "Canvas Confetti & HTML5 Notification API integration",
+      "Built under Webstr — CC Club, MNNIT",
+    ],
+    year: "2025",
+  },
+  {
+    id: 3,
+    title: "TeamSync Grid",
+    subtitle: "Real-time Team Collaboration Platform",
+    description:
+      "A collaborative workspace platform enabling shared rooms with instant updates via Socket.IO. Features a RESTful Node.js/Express backend, MongoDB persistent storage, and a responsive React frontend for smooth cross-device collaboration.",
+    longDescription:
+      "TeamSync Grid provides teams with a persistent, real-time shared workspace. Users can create rooms, collaborate instantaneously, and trust that their data persists across sessions — powered by a robust REST + WebSocket architecture.",
+    tech: ["React", "Socket.IO", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+    github: "https://github.com/suraj3722",
+    demo: null,
+    gradient: "from-purple-600 to-pink-500",
+    glowColor: "shadow-purple-500/20",
+    tag: "Full Stack",
+    tagColor: "bg-purple-500/20 text-purple-300",
+    highlights: [
+      "Real-time shared rooms via Socket.IO",
+      "Secure REST APIs with Node.js & Express",
+      "Persistent data storage with MongoDB",
+      "Responsive React frontend for all devices",
+    ],
+    year: "2025",
+  },
+];
+
+export const achievements = [
+  {
+    id: 1,
+    title: "NIMCET 2025",
+    subtitle: "National Level Entrance Test",
+    description: "Secured All India Rank 81 in NIMCET — the gateway to NIT MCA programs. Competed against thousands of candidates nationwide.",
+    rank: "AIR 81",
+    icon: "🏆",
+    gradient: "from-yellow-500 to-orange-500",
+    year: "2025",
+    type: "National Rank",
+  },
+  {
+    id: 2,
+    title: "CUET 2025",
+    subtitle: "Common University Entrance Test",
+    description: "Achieved All India Rank 295 in CUET PG, demonstrating strong academic performance at the national level.",
+    rank: "AIR 295",
+    icon: "🥈",
+    gradient: "from-slate-400 to-slate-600",
+    year: "2025",
+    type: "National Rank",
+  },
+  {
+    id: 3,
+    title: "DevJam 2026",
+    subtitle: "Hackathon",
+    description: "Secured Rank 2 at DevJam hackathon, where our team built ScribDrib — a real-time collaborative whiteboard with AI integration.",
+    rank: "Rank 2",
+    icon: "⚡",
+    gradient: "from-violet-600 to-cyan-500",
+    year: "2026",
+    type: "Hackathon",
+  },
+  {
+    id: 4,
+    title: "Softablitz 2025",
+    subtitle: "MNNIT Allahabad",
+    description: "Built and presented a complete MERN stack project, demonstrating full-stack development skills in a timed competitive environment.",
+    rank: "Participant",
+    icon: "💻",
+    gradient: "from-emerald-500 to-teal-600",
+    year: "2025",
+    type: "Competition",
+  },
+  {
+    id: 5,
+    title: "Webstr 2025",
+    subtitle: "CC Club, MNNIT",
+    description: "Built Beat the Buzzer as part of the CodeSangam competition under MNNIT's CC Club — pushing boundaries of web-based desktop apps.",
+    rank: "CC Club",
+    icon: "🌐",
+    gradient: "from-blue-500 to-indigo-600",
+    year: "2025",
+    type: "Club Activity",
+  },
+];
+
+export const codingProfiles = [
+  {
+    platform: "LeetCode",
+    username: "Jarvis012",
+    url: "https://leetcode.com/Jarvis012",
+    description: "Data Structures & Algorithms practice",
+    icon: "LC",
+    gradient: "from-yellow-500 to-orange-500",
+    color: "#FFA116",
+    stats: "Active Problem Solver",
+  },
+  {
+    platform: "Codeforces",
+    username: "Jarvis012",
+    url: "https://codeforces.com/profile/Jarvis012",
+    description: "Competitive Programming",
+    icon: "CF",
+    gradient: "from-blue-500 to-blue-700",
+    color: "#1F8ACB",
+    stats: "Competitive Programmer",
+  },
+  {
+    platform: "GitHub",
+    username: "suraj3722",
+    url: "https://github.com/suraj3722",
+    description: "Open Source & Projects",
+    icon: "GH",
+    gradient: "from-gray-600 to-gray-800",
+    color: "#ffffff",
+    stats: "3+ Projects",
+  },
+  {
+    platform: "LinkedIn",
+    username: "suraj3722",
+    url: "https://linkedin.com/in/suraj3722",
+    description: "Professional Network",
+    icon: "LI",
+    gradient: "from-blue-600 to-blue-800",
+    color: "#0A66C2",
+    stats: "Professional Profile",
+  },
+];
