@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Menu, X, Music, VolumeX } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 const navLinks = [
@@ -18,7 +18,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -46,16 +45,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const audio = document.getElementById("bgm") as HTMLAudioElement;
-    if (audio) {
-      if (isPlaying) {
-        audio.play().catch((e) => console.log("Audio play failed:", e));
-      } else {
-        audio.pause();
-      }
-    }
-  }, [isPlaying]);
+
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
@@ -71,10 +61,7 @@ export default function Navbar() {
         style={{ scaleX, background: "linear-gradient(to right, #7c3aed, #06b6d4)" }}
       />
       
-      {/* Background Music Audio Element */}
-      <audio id="bgm" loop preload="auto">
-        <source src="/bgm.mp3" type="audio/mpeg" />
-      </audio>
+
 
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
@@ -131,17 +118,7 @@ export default function Navbar() {
                 Resume
               </a>
               
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center transition-all duration-200 hover:scale-110 ml-2 border border-white/10"
-                aria-label={isPlaying ? "Mute Music" : "Play Music"}
-              >
-                {isPlaying ? (
-                  <Music size={18} className="text-cyan-400" />
-                ) : (
-                  <VolumeX size={18} className="text-slate-400" />
-                )}
-              </button>
+
             </div>
 
             {/* Mobile hamburger */}
@@ -181,16 +158,7 @@ export default function Navbar() {
                 Download Resume
               </a>
 
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="mt-2 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium glass transition-all"
-              >
-                {isPlaying ? (
-                  <><Music size={16} className="text-cyan-400" /> <span>Pause Music</span></>
-                ) : (
-                  <><VolumeX size={16} className="text-slate-400" /> <span>Play Music</span></>
-                )}
-              </button>
+
             </div>
           </motion.div>
         )}
