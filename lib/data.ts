@@ -96,6 +96,8 @@ export const projects = [
     tech: ["React", "Socket.IO", "Node.js", "MongoDB", "Google GenAI", "JWT", "Fabric.js"],
     github: "https://github.com/suraj3722",
     demo: null,
+    image: "/scribdribfront.jpeg",
+    hoverImage: "/scribdribWIN.jpeg",
     gradient: "from-violet-600 to-cyan-500",
     glowColor: "shadow-violet-500/20",
     tag: "Hackathon Winner",

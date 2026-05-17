@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/lib/data";
 import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/animations";
@@ -60,31 +61,52 @@ export default function Projects() {
                   <div className={`absolute inset-0 bg-gradient-to-tr ${project.gradient} opacity-20 blur-3xl rounded-full group-hover:opacity-40 transition-opacity duration-700`} />
                   
                   <div className="relative aspect-video rounded-2xl glass overflow-hidden border border-white/10 group-hover:border-white/20 transition-all duration-500 transform group-hover:rotate-x-2 group-hover:rotate-y-2 group-hover:scale-[1.02]">
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                      {/* Top Bar pseudo UI */}
-                      <div className="flex gap-2 mb-4 opacity-50">
-                        <div className="w-3 h-3 rounded-full bg-red-400" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                        <div className="w-3 h-3 rounded-full bg-green-400" />
+                    {(project as any).image ? (
+                      <>
+                        <Image
+                          src={(project as any).image}
+                          alt={project.title}
+                          fill
+                          className={`object-cover transition-opacity duration-700 w-full h-full ${(project as any).hoverImage ? 'opacity-90 group-hover:opacity-0' : 'opacity-90 group-hover:scale-105'}`}
+                          priority={project.id === 1}
+                        />
+                        {(project as any).hoverImage && (
+                          <Image
+                            src={(project as any).hoverImage}
+                            alt={`${project.title} hover`}
+                            fill
+                            className="object-cover opacity-0 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 absolute inset-0"
+                            priority={project.id === 1}
+                          />
+                        )}
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        {/* Top Bar pseudo UI */}
+                        <div className="flex gap-2 mb-4 opacity-50">
+                          <div className="w-3 h-3 rounded-full bg-red-400" />
+                          <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                          <div className="w-3 h-3 rounded-full bg-green-400" />
+                        </div>
+                        
+                        {/* Typographic Hero within the box */}
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h3 className={`text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
+                            {project.title}
+                          </h3>
+                          <p className="text-white/50 mono text-sm mt-4 font-semibold uppercase tracking-widest">
+                            {project.tag} / {project.year}
+                          </p>
+                        </div>
+                        
+                        {/* Abstract geometric decoration based on ID */}
+                        <div className="absolute right-8 bottom-8 text-white/5 pointer-events-none">
+                          <span className="text-[12rem] font-bold leading-none select-none tracking-tighter">
+                            0{project.id}
+                          </span>
+                        </div>
                       </div>
-                      
-                      {/* Typographic Hero within the box */}
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h3 className={`text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
-                          {project.title}
-                        </h3>
-                        <p className="text-white/50 mono text-sm mt-4 font-semibold uppercase tracking-widest">
-                          {project.tag} / {project.year}
-                        </p>
-                      </div>
-                      
-                      {/* Abstract geometric decoration based on ID */}
-                      <div className="absolute right-8 bottom-8 text-white/5 pointer-events-none">
-                        <span className="text-[12rem] font-bold leading-none select-none tracking-tighter">
-                          0{project.id}
-                        </span>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </motion.div>
 
